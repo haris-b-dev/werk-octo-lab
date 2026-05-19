@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Octo.ServicePortal.Domain\Octo.ServicePortal.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
