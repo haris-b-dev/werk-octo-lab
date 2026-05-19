@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Octo.ServicePortal.Application/Octo.ServicePortal.Application.csproj" />
+    <Project Path="src/Octo.ServicePortal.Domain/Octo.ServicePortal.Domain.csproj" />
+    <Project Path="src/Octo.ServicePortal.Infrastructure/Octo.ServicePortal.Infrastructure.csproj" />
+    <Project Path="src/Octo.ServicePortal.Web/Octo.ServicePortal.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Octo.ServicePortal.Application.Tests/Octo.ServicePortal.Application.Tests.csproj" />
+    <Project Path="tests/Octo.ServicePortal.Domain.Tests/Octo.ServicePortal.Domain.Tests.csproj" />
+  </Folder>
+</Solution>
