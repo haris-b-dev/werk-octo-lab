@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/workflows/">
+    <File Path="ci.yml" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/Octo.ServicePortal.Application/Octo.ServicePortal.Application.csproj" />
     <Project Path="src/Octo.ServicePortal.Domain/Octo.ServicePortal.Domain.csproj" />

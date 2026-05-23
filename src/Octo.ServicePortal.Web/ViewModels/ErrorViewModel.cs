@@ -1,4 +1,4 @@
-namespace Octo.ServicePortal.Web.Models
+namespace Octo.ServicePortal.Web.ViewModels
 {
 	public class ErrorViewModel
 	{
