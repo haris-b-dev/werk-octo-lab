@@ -62,7 +62,7 @@ namespace Octo.ServicePortal.Domain.Machines
 		{
 			if (string.IsNullOrWhiteSpace(value))
 			{
-				throw new ArgumentException($"{fieldName} is required and cannot be empty.");
+				throw new ArgumentException($"{fieldName} is required and cannot be empty.", fieldName);
 			}
 		}
 

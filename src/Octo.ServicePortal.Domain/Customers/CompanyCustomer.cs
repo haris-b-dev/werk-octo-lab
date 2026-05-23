@@ -49,7 +49,7 @@ namespace Octo.ServicePortal.Domain.Customers
 		{
 			if (string.IsNullOrWhiteSpace(value))
 			{
-				throw new ArgumentException($"{fieldName}, is required and cannot be empty.");
+				throw new ArgumentException($"{fieldName}, is required and cannot be empty.", fieldName);
 			}
 		}
 
