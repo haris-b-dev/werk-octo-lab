@@ -29,9 +29,9 @@ namespace Octo.ServicePortal.Domain.Machines
 		}
 
 		public Machine(
-			int companyCustomerId,
 			string modelName,
-			string serialNumber
+			string serialNumber,
+			int companyCustomerId
 			)
 		{
 			if (companyCustomerId <= 0)
