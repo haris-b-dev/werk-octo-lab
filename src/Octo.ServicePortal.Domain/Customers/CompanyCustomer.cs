@@ -30,19 +30,18 @@ namespace Octo.ServicePortal.Domain.Customers
 			Email = string.Empty;
 		}
 
-		public CompanyCustomer(int id, string companyName, string address, string contactPerson, string email)
+		public CompanyCustomer(string companyName, string companyAddress, string contactPerson, string email)
 		{
-			Id = id;
 			CompanyName = companyName;
-			CompanyAddress = address;
+			CompanyAddress = companyAddress;
 			ContactPerson = contactPerson;
 			Email = email;
 			CreatedAt = DateTime.UtcNow;
 
-			ValidateRequiredField(CompanyName, nameof(CompanyName));
-			ValidateRequiredField(CompanyAddress, nameof(CompanyAddress));
-			ValidateRequiredField(ContactPerson, nameof(ContactPerson));
-			ValidateRequiredField(Email, nameof(Email));
+			ValidateRequiredField(CompanyName, nameof(companyName));
+			ValidateRequiredField(CompanyAddress, nameof(companyAddress));
+			ValidateRequiredField(ContactPerson, nameof(contactPerson));
+			ValidateRequiredField(Email, nameof(email));
 		}
 
 		private static void ValidateRequiredField(string value, string fieldName)
