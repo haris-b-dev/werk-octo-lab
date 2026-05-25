@@ -1,3 +1,6 @@
+using Octo.ServicePortal.Application;
+using Octo.ServicePortal.Infrastructure;
+
 namespace Octo.ServicePortal.Web
 {
 	public class Program
@@ -8,6 +11,8 @@ namespace Octo.ServicePortal.Web
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+			builder.Services.AddApplication();
+			builder.Services.AddInfrastructure(builder.Configuration);
 
 			var app = builder.Build();
 
