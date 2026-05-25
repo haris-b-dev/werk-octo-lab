@@ -1,0 +1,60 @@
+﻿@model Octo.ServicePortal.Web.ViewModels.ServiceRequests.CreateServiceRequestViewModel
+
+
+@{
+    ViewData["Title"] = "Create Service Request";
+}
+
+<h1>Create Service Request</h1>
+
+@if (TempData["SuccessMessage"] is not null)
+{
+    <div class="alert alert-danger">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb3">
+        <label asp-for="Type" class="form-label"></label>
+        <select asp-for="Type" asp-items="Model.ServiceRequestTypes" class="form-select">
+            <option value="">Please select a type</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CompanyCustomerId" class="form-label"></label>
+        <input asp-for="CompanyCustomerId" class="form-control" />
+        <span asp-validation-for="CompanyCustomerId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="MachineId" class="form-label"></label>
+        <input asp-for="MachineId" class="form-control" />
+        <span asp-validation-for="MachineId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

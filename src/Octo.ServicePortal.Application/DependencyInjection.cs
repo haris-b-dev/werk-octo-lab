@@ -8,6 +8,7 @@ namespace Octo.ServicePortal.Application
 		public static IServiceCollection AddApplication(this IServiceCollection services)
 		{
 			services.AddScoped<CreateServiceRequestService>();
+			services.AddScoped<ServiceRequestTypeProvider>();
 
 			return services;
 		}
