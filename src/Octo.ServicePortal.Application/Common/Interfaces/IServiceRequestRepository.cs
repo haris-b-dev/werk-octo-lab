@@ -9,7 +9,7 @@ namespace Octo.ServicePortal.Application.Common.Interfaces
 {
 	public interface IServiceRequestRepository
 	{
-		Task<bool> AddAsync(ServiceRequest serviceRequest, CancellationToken cancellationToken = default);
+		Task AddAsync(ServiceRequest serviceRequest, CancellationToken cancellationToken = default);
 
 	}
 }
