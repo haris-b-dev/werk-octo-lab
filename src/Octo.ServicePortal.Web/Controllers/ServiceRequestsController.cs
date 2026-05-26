@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Octo.ServicePortal.Application.ServiceRequests;
+using Octo.ServicePortal.Application.ServiceRequests.ListServiceRequests;
 using Octo.ServicePortal.Web.ViewModels.ServiceRequests;
 
 namespace Octo.ServicePortal.Web.Controllers
@@ -9,13 +10,17 @@ namespace Octo.ServicePortal.Web.Controllers
 	{
 		private readonly CreateServiceRequestService _createServiceRequestService;
 		private readonly ServiceRequestTypeProvider _serviceRequestTypeProvider;
+		private readonly GetServiceRequestsService _getServiceRequestsService;
 
 		public ServiceRequestsController(
 			CreateServiceRequestService createServiceRequestService,
-			ServiceRequestTypeProvider serviceRequestTypeProvider)
+			ServiceRequestTypeProvider serviceRequestTypeProvider,
+			GetServiceRequestsService getServiceRequestsService
+			)
 		{
 			_createServiceRequestService = createServiceRequestService;
 			_serviceRequestTypeProvider = serviceRequestTypeProvider;
+			_getServiceRequestsService = getServiceRequestsService;
 		}
 
 		private List<SelectListItem> GetServiceRequestTypeSelectList()
@@ -25,6 +30,13 @@ namespace Octo.ServicePortal.Web.Controllers
 				Value = option.Value.ToString(),
 				Text = option.Text
 			}).ToList();
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> Index(CancellationToken cancellationToken)
+		{
+			var viewModel = await _getServiceRequestsService.HandleAsync(cancellationToken);
+			return View(viewModel);
 		}
 
 		[HttpGet]
